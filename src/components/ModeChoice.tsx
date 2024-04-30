@@ -21,6 +21,7 @@ export const ModeChoice = <T extends { label: string }>({
       <div className="flex flex-col items-center justify-center sm:flex-row">
         {modeChoices.map((mode) => (
           <Button
+            type="button"
             key={mode.label}
             onClick={() => onChoice(mode)}
             variant={getButtonVariant(selected, mode)}
