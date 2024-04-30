@@ -35,7 +35,7 @@ export const StartView = () => {
           Quiz
         </Typography>
         <div className="flex items-center gap-x-4">
-          <Typography variant="secondary" className="text-typo-300 text-4xl">
+          <Typography variant="secondary" className="text-4xl">
             Jak dobrze znasz serial
           </Typography>
           <figure>the Office</figure>

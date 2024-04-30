@@ -18,7 +18,7 @@ export const ModeChoice = <T extends { label: string }>({
     <div className="flex flex-col w-[75%] gap-y-4">
       <Typography
         variant="secondary"
-        className="text-typo-500 text-xl text-center"
+        className="text-xl text-center"
       >
         Wybierz tryb gry
       </Typography>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { ModeChoice } from "../components/ModeChoice";
+import { ModeChoice } from "@quiz/components/ModeChoice";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -20,8 +20,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const PrimaryChoice: Story = {
+export const SelectedOption: Story = {
   args: {
+    selected: { label: "Option 1" },
     onChoice: fn(),
     modeChoices: [
       {
@@ -34,5 +35,50 @@ export const PrimaryChoice: Story = {
         label: "Option 3",
       },
     ],
-  }
+  },
+};
+
+export const WithoutSelectedOption: Story = {
+  args: {
+    selected: null,
+    onChoice: fn(),
+    modeChoices: [
+      {
+        label: "Option 1",
+      },
+      {
+        label: "Option 2",
+      },
+      {
+        label: "Option 3",
+      },
+    ],
+  },
+};
+
+export const ALotOfOptions: Story = {
+  args: {
+    selected: { label: "Option 5" },
+    onChoice: fn(),
+    modeChoices: [
+      {
+        label: "Option 1",
+      },
+      {
+        label: "Option 2",
+      },
+      {
+        label: "Option 3",
+      },
+      {
+        label: "Option 4",
+      },
+      {
+        label: "Option 5",
+      },
+      {
+        label: "Option 6",
+      },
+    ],
+  },
 };
