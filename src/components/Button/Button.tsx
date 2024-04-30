@@ -1,4 +1,4 @@
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
   variant?: "solid" | "questionable" | "outlined";
 };
@@ -25,10 +25,10 @@ const getClassNameValuesBySpecificVariant = (
 ) => {
   switch (variant) {
     case "solid":
-      return "bg-cyan-800 text-white hover:bg-cyan-600";
+      return "bg-primary-500 text-white hover:bg-primary-600";
     case "questionable":
-      return "bg-cyan-500 text-white hover:bg-cyan-600";
+      return "bg-primary-300 text-white hover:bg-primary-400";
     case "outlined":
-      return "bg-white border-cyan-800 text-cyan-800 hover:bg-cyan-100";
+      return "bg-white border-primary-800 text-primary-800 hover:bg-primary-100";
   }
 };
