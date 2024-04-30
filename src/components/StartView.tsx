@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { ModeChoice } from "./ModeChoice";
 import Button from "./Button";
-import Typography from "./Typography";
+import { StartViewHeader } from "./StartViewHeader";
 
 export type Mode = { label: string };
 const modeChoices = [
@@ -14,6 +14,8 @@ const startGame = (mode: Mode) => {
   console.debug(mode);
 };
 
+const MemoizedStartViewHeader = memo(StartViewHeader);
+
 export const StartView = () => {
   const [selectedMode, setSelectedMode] = useState<Mode | null>(null);
   const chooseMode = (mode: Mode) => setSelectedMode(mode);
@@ -24,23 +26,7 @@ export const StartView = () => {
 
   return (
     <main className="flex flex-col items-center gap-y-8 w-screen">
-      <header className="sm:hidden">
-        <Typography as="h1" className="text-3xl text-cente">
-          Quiz o:
-        </Typography>
-        <figure>the Office</figure>
-      </header>
-      <header className="hidden sm:flex flex-col">
-        <Typography as="h1" className="text-7xl">
-          Quiz
-        </Typography>
-        <div className="flex items-center gap-x-4">
-          <Typography variant="secondary" className="text-4xl">
-            Jak dobrze znasz serial
-          </Typography>
-          <figure>the Office</figure>
-        </div>
-      </header>
+      <MemoizedStartViewHeader />
       <ModeChoice
         selected={selectedMode}
         modeChoices={modeChoices}
