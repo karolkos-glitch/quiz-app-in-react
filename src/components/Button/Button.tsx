@@ -15,8 +15,8 @@ export const Button = ({
 
   return (
     <button
-      className={`border-2 rounded-md px-4 py-2 transition ${classNameValue} :disabled:bg-slate-800 :disabled-text-white`}
       {...htmlButtonProps}
+      className={`border-2 rounded-md px-4 py-2 transition ${classNameValue} :disabled:bg-slate-800 :disabled-text-white`}
     >
       {children}
     </button>

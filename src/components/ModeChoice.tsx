@@ -1,6 +1,7 @@
 import Button from "@quiz/components/Button";
 import type { Mode } from "./StartView";
 import type { ButtonProps } from "./Button/Button";
+import Typography from "./Typography";
 
 type ModeChoiceProps<T> = {
   modeChoices: T[];
@@ -15,9 +16,12 @@ export const ModeChoice = <T extends { label: string }>({
 }: ModeChoiceProps<T>) => {
   return (
     <div className="flex flex-col w-[75%] gap-y-4">
-      <span className="text-typo-500 text-xl text-center">
+      <Typography
+        variant="secondary"
+        className="text-typo-500 text-xl text-center"
+      >
         Wybierz tryb gry
-      </span>
+      </Typography>
       <div className="flex flex-col items-center justify-center sm:flex-row">
         {modeChoices.map((mode) => (
           <Button

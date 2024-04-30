@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ModeChoice } from "./ModeChoice";
 import Button from "./Button";
+import Typography from "./Typography";
 
 export type Mode = { label: string };
 const modeChoices = [
@@ -24,13 +25,19 @@ export const StartView = () => {
   return (
     <main className="flex flex-col items-center gap-y-8 w-screen">
       <header className="sm:hidden">
-        <h1 className="text-3xl text-center text-primary-300">Quiz o:</h1>
+        <Typography as="h1" className="text-3xl text-cente">
+          Quiz o:
+        </Typography>
         <figure>the Office</figure>
       </header>
       <header className="hidden sm:flex flex-col">
-        <h1 className="text-7xl text-primary-300">Quiz</h1>
+        <Typography as="h1" className="text-7xl">
+          Quiz
+        </Typography>
         <div className="flex items-center gap-x-4">
-          <p className="text-typo-300 text-4xl">Jak dobrze znasz serial</p>
+          <Typography variant="secondary" className="text-typo-300 text-4xl">
+            Jak dobrze znasz serial
+          </Typography>
           <figure>the Office</figure>
         </div>
       </header>
