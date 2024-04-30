@@ -44,10 +44,10 @@ Dodatkowo: w razie problemów z dostępem do API, mamy gotowe repozytorium gotow
 ### Widoki
 
 #### Urządzenia mobilne:
-![](./docs/images/categories_mobile.png)
+![](./src/docs/images/categories_mobile.png)
 
 #### Urządzenia desktopowe
-![](./docs/images/categories_desktop.png)
+![](./src/docs/images/categories_desktop.png)
 
 ## Ekran wyboru trybu
 
@@ -64,10 +64,10 @@ Dodatkowo: w razie problemów z dostępem do API, mamy gotowe repozytorium gotow
 ### Widoki
 
 #### Urządzenia mobilne:
-![](./docs/images/mode_mobile.png)
+![](./src/docs/images/mode_mobile.png)
 
 #### Urządzenia desktopowe
-![](./docs/images/mode_desktop.png)
+![](./src/docs/images/mode_desktop.png)
 
 ## Ekran pytania
 
@@ -93,10 +93,10 @@ Dodatkowo: w razie problemów z dostępem do API, mamy gotowe repozytorium gotow
 ### Widoki
 
 #### Urządzenia mobilne:
-![](./docs/images/qa_mobile.png)
+![](./src/docs/images/qa_mobile.png)
 
 #### Urządzenia desktopowe
-![](./docs/images/qa_desktop.png)
+![](./src/docs/images/qa_desktop.png)
 
 ## Ekran wyników
 
@@ -113,10 +113,10 @@ Dodatkowo: w razie problemów z dostępem do API, mamy gotowe repozytorium gotow
 ### Widoki
 
 #### Urządzenia mobilne:
-![](./docs/images/score_mobile.png)
+![](./src/docs/images/score_mobile.png)
 
 #### Urządzenia desktopowe
-![](./docs/images/score_desktop.png)
+![](./src/docs/images/score_desktop.png)
 
 ## Flow aplikacji
-![](./docs/images/flow.png)
+![](./src/docs/images/flow.png)

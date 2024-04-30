@@ -1,3 +1,5 @@
+import { ResultsView } from "@quiz/components/ResultsView";
+
 export default function Results() {
-  return <section>Results</section>;
+  return <ResultsView />;
 }

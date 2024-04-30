@@ -1,3 +1,5 @@
+import { QuizView } from "@quiz/components/QuizView";
+
 export default function Quiz() {
-  return <section>Quiz</section>;
+  return <QuizView />;
 }
