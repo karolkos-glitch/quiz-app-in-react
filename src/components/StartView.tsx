@@ -1,13 +1,13 @@
 import { memo, useState } from "react";
-import { ModeChoice } from "@quiz/components/ModeChoice";
 import Button from "@quiz/components/Button";
 import { StartViewHeader } from "@quiz/components/StartViewHeader";
-import type { Mode } from "@quiz/types/quiz";
+import { Choices } from "@quiz/components/Choices";
+import { Mode } from "@quiz/domain/quiz/types";
 
 const modeChoices = [
-  { key: "10-questions", label: "10 pytan" },
-  { key: "30-questions", label: "30 pytań" },
-  { key: "50-questions", label: "50 pytań" },
+  { key: "10-questions", label: "10 pytan", questionCount: 10 },
+  { key: "30-questions", label: "30 pytań", questionCount: 30 },
+  { key: "50-questions", label: "50 pytań", questionCount: 50 },
 ] satisfies Mode[];
 
 const startGame = (mode: Mode) => {
@@ -27,9 +27,10 @@ export const StartView = () => {
   return (
     <main className="flex flex-col items-center gap-y-8 w-screen">
       <MemoizedStartViewHeader />
-      <ModeChoice
+      <Choices
+        label="Wybierz tryb gry"
+        choices={modeChoices}
         selected={selectedMode}
-        modeChoices={modeChoices}
         onChoice={chooseMode}
       />
       <div className="w-[75%] flex flex-col justify-center items-center">
