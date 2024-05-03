@@ -2,7 +2,7 @@ import { createQuizInstance } from "@quiz/domain/quiz/createQuizInstance";
 import type { Mode, Quiz } from "@quiz/domain/quiz/types";
 import { useEffect, useState } from "react";
 import { QuizQuestionSkeleton } from "@quiz/components/QuizQuestionSkeleton";
-import Typography from "@quiz/components/Typography";
+import { Typography } from "@quiz/components/Typography";
 import { AppearenceTransition } from "@quiz/components/AppearenceTransition";
 
 type QuizCreatorProps = {
@@ -33,9 +33,5 @@ export const QuizCreatorRenderer = ({ mode, children }: QuizCreatorProps) => {
       </AppearenceTransition>
     );
 
-  return (
-    <AppearenceTransition>
-      {children(quizInstance)}
-    </AppearenceTransition>
-  );
+  return <AppearenceTransition>{children(quizInstance)}</AppearenceTransition>;
 };

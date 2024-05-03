@@ -10,7 +10,7 @@ export const Button = ({
 }: ButtonProps) => {
   const classNameValue = getClassNameValuesBySpecificVariant(
     variant,
-    htmlButtonProps.disabled
+    htmlButtonProps.disabled,
   );
 
   return (
@@ -25,7 +25,7 @@ export const Button = ({
 
 const getClassNameValuesBySpecificVariant = (
   variant: ButtonProps["variant"],
-  disabled = false
+  disabled = false,
 ) => {
   if (disabled) return "bg-slate-400 text-white";
   switch (variant) {

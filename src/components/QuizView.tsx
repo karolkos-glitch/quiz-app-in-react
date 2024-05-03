@@ -1,7 +1,7 @@
 import type { QuestionAnswer, Quiz } from "@quiz/domain/quiz/types";
-import Typography from "@quiz/components/Typography";
+import { Typography } from "@quiz/components/Typography";
 import { Choices } from "@quiz/components/Choices";
-import Button from "@quiz/components/Button";
+import { Button } from "@quiz/components/Button";
 import { useInGameQuizInstance } from "@quiz/domain/quiz/useInGameQuizInstance";
 import { useState } from "react";
 import { QuizQuestionSkeleton } from "@quiz/components/QuizQuestionSkeleton";
@@ -28,7 +28,7 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
   } = useInGameQuizInstance(quiz, endGameAndRedirectToResults);
 
   const [selectedAnswer, setSelectedAnswer] = useState<QuestionAnswer | null>(
-    null
+    null,
   );
   const handleNextQuestion = () => {
     selectedAnswer ? onAnswer(selectedAnswer) : onSkip();
@@ -36,7 +36,7 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
   };
   const { timeRemaining, resetTimeRemaining } = useTimeRemaining(
     10,
-    handleNextQuestion
+    handleNextQuestion,
   );
 
   const handleAnswer = () => {

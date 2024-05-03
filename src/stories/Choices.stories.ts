@@ -14,7 +14,7 @@ const meta = {
   tags: ["autodocs"],
 
   args: {
-    label: 'Czy warto zastąpic błędy?',
+    label: "Czy warto zastąpic błędy?",
     choices: [
       {
         key: "10-questions",

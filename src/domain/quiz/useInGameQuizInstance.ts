@@ -3,7 +3,7 @@ import type { QuestionAnswer, Quiz } from "./types";
 
 export const useInGameQuizInstance = (
   initialGameQuiz: Quiz,
-  endGame: (quiz: Quiz) => void
+  endGame: (quiz: Quiz) => void,
 ) => {
   const [loadingNextQuestion, startTransitionToNextQuestion] = useTransition();
   const [quiz, setQuiz] = useState(initialGameQuiz);

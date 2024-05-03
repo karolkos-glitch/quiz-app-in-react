@@ -180,92 +180,92 @@
       ]
     },
     {
-        "id": "q18",
-        "question": "What is the name of the children's magician that Michael hires to entertain the office?",
-        "correctAnswer": "c",
-        "answers": [
-          {"key": "a", "label": "The Amazing Randi"},
-          {"key": "b", "label": "David Blaine"},
-          {"key": "c", "label": "Wizard Everingham"},
-          {"key": "d", "label": "The Paper Magician"}
-        ]
-      },
-      {
-        "id": "q19",
-        "question": "What is the name of the a cappella group that Dwight starts at the office?",
-        "correctAnswer": "b",
-        "answers": [
-          {"key": "a", "label": "The Assistant Regional Tunes"},
-          {"key": "b", "label": "The Scranton Strangles"},
-          {"key": "c", "label": "The Dunder Mifflin Harmonies"},
-          {"key": "d", "label": "The Beet Bandits"}
-        ]
-      },
-      {
-        "id": "q20",
-        "question": "What is the name of the fake client that Michael invents to boost sales?",
+      "id": "q18",
+      "question": "What is the name of the children's magician that Michael hires to entertain the office?",
+      "correctAnswer": "c",
+      "answers": [
+        { "key": "a", "label": "The Amazing Randi" },
+        { "key": "b", "label": "David Blaine" },
+        { "key": "c", "label": "Wizard Everingham" },
+        { "key": "d", "label": "The Paper Magician" }
+      ]
+    },
+    {
+      "id": "q19",
+      "question": "What is the name of the a cappella group that Dwight starts at the office?",
+      "correctAnswer": "b",
+      "answers": [
+        { "key": "a", "label": "The Assistant Regional Tunes" },
+        { "key": "b", "label": "The Scranton Strangles" },
+        { "key": "c", "label": "The Dunder Mifflin Harmonies" },
+        { "key": "d", "label": "The Beet Bandits" }
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "What is the name of the fake client that Michael invents to boost sales?",
       "correctAnswer": "d",
-        "answers": [
-          {"key": "a", "label": "The Scranton Business Coalition"},
-          {"key": "b", "label": "The Paper Products Emporium"},
-          {"key": "c", "label": "The Northeastern Paper Supply"},
-          {"key": "d", "label": "Prince Family Paper"}
-        ]
-      },
-      {
-        "id": "q21",
-        "question": "What is the name of the documentary's cameraman who occasionally interacts with the office?",
-        "correctAnswer": "b",
-        "answers": [
-          {"key": "a", "label": "Brian the Boom Guy"},
-          {"key": "b", "label": "Brian David Hansen"},
-          {"key": "c", "label": "The Documentary Filmmaker"},
-          {"key": "d", "label": "The Scranton Observer Crew"}
-        ]
-      },
-      {
-        "id": "q22",
-        "question": "What is the name of the award that Michael creates to honor the best salesman in the office?",
-        "correctAnswer": "c",
-        "answers": [
-          {"key": "a", "label": "The Dunder Mifflin Salesperson of the Year"},
-          {"key": "b", "label": "The Michael Scott Paper Excellence Award"},
-          {"key": "c", "label": "The Dundie Award"},
-          {"key": "d", "label": "The Assistant Regional Manager Trophy"}
-        ]
-      },
-      {
-        "id": "q23",
-        "question": "What is the name of the volunteer prison program that Dwight convinces Michael to participate in?",
-        "correctAnswer": "a",
-        "answers": [
-          {"key": "a", "label": ",Scared Straight'"},
-          {"key": "b", "label": "The Prison Pen Pal Program"},
-          {"key": "c", "label": "The Inmate Rehabilitation Initiative"},
-          {"key": "d", "label": "The Dunder Mifflin Corrections Project"}
-        ]
-      },
-      {
-        "id": "q24",
-        "question": "What is the name of the website that Michael uses to try online dating?",
-        "correctAnswer": "d",
-        "answers": [
-          {"key": "a", "label": "eHarmony"},
-          {"key": "b", "label": "Match.com"},
-          {"key": "c", "label": "Tinder"},
-          {"key": "d", "label": "Dunder Mifflin Mates"}
-        ]
-      },
-      {
-        "id": "q25",
-        "question": "What is the name of the fictional horror movie that Michael accidentally rents instead of a romantic comedy?",
-        "correctAnswer": "b",
-        "answers": [
-          {"key": "a", "label": "The Blair Witch Project"},
-          {"key": "b", "label": "Threat Level Midnight"},
-          {"key": "c", "label": "The Office (a mockumentary)"},
-          {"key": "d", "label": "Silence of the Lambs"}
-        ]
-      }
+      "answers": [
+        { "key": "a", "label": "The Scranton Business Coalition" },
+        { "key": "b", "label": "The Paper Products Emporium" },
+        { "key": "c", "label": "The Northeastern Paper Supply" },
+        { "key": "d", "label": "Prince Family Paper" }
+      ]
+    },
+    {
+      "id": "q21",
+      "question": "What is the name of the documentary's cameraman who occasionally interacts with the office?",
+      "correctAnswer": "b",
+      "answers": [
+        { "key": "a", "label": "Brian the Boom Guy" },
+        { "key": "b", "label": "Brian David Hansen" },
+        { "key": "c", "label": "The Documentary Filmmaker" },
+        { "key": "d", "label": "The Scranton Observer Crew" }
+      ]
+    },
+    {
+      "id": "q22",
+      "question": "What is the name of the award that Michael creates to honor the best salesman in the office?",
+      "correctAnswer": "c",
+      "answers": [
+        { "key": "a", "label": "The Dunder Mifflin Salesperson of the Year" },
+        { "key": "b", "label": "The Michael Scott Paper Excellence Award" },
+        { "key": "c", "label": "The Dundie Award" },
+        { "key": "d", "label": "The Assistant Regional Manager Trophy" }
+      ]
+    },
+    {
+      "id": "q23",
+      "question": "What is the name of the volunteer prison program that Dwight convinces Michael to participate in?",
+      "correctAnswer": "a",
+      "answers": [
+        { "key": "a", "label": ",Scared Straight'" },
+        { "key": "b", "label": "The Prison Pen Pal Program" },
+        { "key": "c", "label": "The Inmate Rehabilitation Initiative" },
+        { "key": "d", "label": "The Dunder Mifflin Corrections Project" }
+      ]
+    },
+    {
+      "id": "q24",
+      "question": "What is the name of the website that Michael uses to try online dating?",
+      "correctAnswer": "d",
+      "answers": [
+        { "key": "a", "label": "eHarmony" },
+        { "key": "b", "label": "Match.com" },
+        { "key": "c", "label": "Tinder" },
+        { "key": "d", "label": "Dunder Mifflin Mates" }
+      ]
+    },
+    {
+      "id": "q25",
+      "question": "What is the name of the fictional horror movie that Michael accidentally rents instead of a romantic comedy?",
+      "correctAnswer": "b",
+      "answers": [
+        { "key": "a", "label": "The Blair Witch Project" },
+        { "key": "b", "label": "Threat Level Midnight" },
+        { "key": "c", "label": "The Office (a mockumentary)" },
+        { "key": "d", "label": "Silence of the Lambs" }
+      ]
+    }
   ]
 }

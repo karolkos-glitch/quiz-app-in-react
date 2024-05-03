@@ -1,7 +1,9 @@
-import Button from "@quiz/components/Button";
-import Typography from "@quiz/components/Typography";
+import { Button } from "@quiz/components/Button";
+import { Typography } from "@quiz/components/Typography";
 import type { QuizResults } from "@quiz/domain/quiz/types";
 import { useNavigate } from "react-router-dom";
+import { ResultsAnswerHistory } from "./ResultsAnswersHistory";
+import { ResultsStats } from "./ResultsStats";
 
 type ResultsViewProps = {
   quizResults: QuizResults;
@@ -31,28 +33,12 @@ export const ResultsView = ({
           Odpowiedzi:
         </Typography>
         <div className="flex flex-col gap-y-4 justify-center items-start sm:flex-row sm:gap-x-4">
-          <ul>
-            <li className="flex justify-between gap-x-2 text-xl">
-              <Typography className="text-green-500">Poprawne</Typography>
-              <Typography variant="secondary">{quizCorrectAnswers}</Typography>
-            </li>
-            <li className="flex justify-between gap-x-2 text-xl">
-              <Typography className="text-red-500">Niepoprawne</Typography>
-              <Typography variant="secondary">{quizFalseAnswers}</Typography>
-            </li>
-            <li className="flex justify-between gap-x-2 text-xl">
-              <Typography variant="secondary">Pominięte: </Typography>
-              <Typography variant="secondary">{quizSkippedAnswers}</Typography>
-            </li>
-          </ul>
-          <div className="grid grid-cols-5 gap-2">
-            {route.map((quizAnswer) => (
-              <div
-                key={quizAnswer.id}
-                className={`w-[25px] h-[25px] rounded-sm shadow-sm ${quizAnswer.questionResult === "correct" ? "bg-green-500" : "bg-red-500"} ${quizAnswer.questionResult === "skipped" ? "bg-gray-500" : ""}`}
-              />
-            ))}
-          </div>
+          <ResultsStats
+            quizCorrectAnswers={quizCorrectAnswers}
+            quizFalseAnswers={quizFalseAnswers}
+            quizSkippedAnswers={quizSkippedAnswers}
+          />
+          <ResultsAnswerHistory route={route} />
         </div>
       </section>
       <Button onClick={navigateToHome}>Zagraj jeszcze raz</Button>

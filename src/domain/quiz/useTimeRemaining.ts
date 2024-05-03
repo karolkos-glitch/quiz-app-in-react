@@ -2,19 +2,19 @@ import { useEffect, useState, useTransition } from "react";
 
 export const useTimeRemaining = (
   initialTimeRemainingValue: number,
-  onTimeEnd: () => void
+  onTimeEnd: () => void,
 ) => {
   const [_, startTimeRemainingTransition] = useTransition();
   const [timeRemaining, setTimeRemaining] = useState(initialTimeRemainingValue);
   const resetTimeRemaining = () =>
     startTimeRemainingTransition(() =>
-      setTimeRemaining(initialTimeRemainingValue)
+      setTimeRemaining(initialTimeRemainingValue),
     );
 
   useEffect(() => {
     const interval = setInterval(() => {
       startTimeRemainingTransition(() =>
-        setTimeRemaining((value) => value - 1)
+        setTimeRemaining((value) => value - 1),
       );
     }, 1000);
     return () => clearInterval(interval);

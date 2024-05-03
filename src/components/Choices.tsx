@@ -1,7 +1,5 @@
-import Button from "@quiz/components/Button";
-
-import type { ButtonProps } from "@quiz/components/Button/Button";
-import Typography from "@quiz/components/Typography";
+import { type ButtonProps, Button } from "@quiz/components/Button";
+import { Typography } from "@quiz/components/Typography";
 
 type ChoicesProps<T> = {
   choices: T[];
@@ -39,7 +37,7 @@ export const Choices = <T extends { label: string; key: string }>({
 
 const getButtonVariant = <T extends { key: string }>(
   selectedMode: T | null,
-  modeFromChoices: T
+  modeFromChoices: T,
 ): ButtonProps["variant"] => {
   if (!selectedMode) return "questionable";
   return selectedMode.key === modeFromChoices.key ? "solid" : "questionable";

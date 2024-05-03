@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import Button from "@quiz/components/Button";
+import { Button } from "@quiz/components/Button";
 import { StartViewHeader } from "@quiz/components/StartViewHeader";
 import { Choices } from "@quiz/components/Choices";
 import { Mode } from "@quiz/domain/quiz/types";

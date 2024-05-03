@@ -8,7 +8,7 @@ export const createQuizInstance = async (mode: Mode): Promise<Quiz> => {
 };
 
 const createQuestionsForInstance = async (
-  questionCount: number
+  questionCount: number,
 ): Promise<Quiz["questions"]> => {
   const { questions: parsedQuestions } = await import("./data.json");
   let questions: Quiz["questions"] = [];

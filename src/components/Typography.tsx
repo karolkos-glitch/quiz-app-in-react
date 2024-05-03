@@ -22,7 +22,7 @@ export const Typography = ({
 };
 
 const getClassNameValuesBySpecificVariant = (
-  variant: TypographyProps["variant"]
+  variant: TypographyProps["variant"],
 ) => {
   switch (variant) {
     case "white":
