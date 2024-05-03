@@ -3,22 +3,25 @@ import Button from "@quiz/components/Button";
 import { StartViewHeader } from "@quiz/components/StartViewHeader";
 import { Choices } from "@quiz/components/Choices";
 import { Mode } from "@quiz/domain/quiz/types";
+import { useNavigate } from "react-router-dom";
 
 const modeChoices = [
   { key: "10-questions", label: "10 pytan", questionCount: 10 },
-  { key: "30-questions", label: "30 pytań", questionCount: 30 },
-  { key: "50-questions", label: "50 pytań", questionCount: 50 },
+  { key: "30-questions", label: "15 pytań", questionCount: 15 },
+  { key: "50-questions", label: "20 pytań", questionCount: 20 },
 ] satisfies Mode[];
-
-const startGame = (mode: Mode) => {
-  console.debug(mode);
-};
 
 const MemoizedStartViewHeader = memo(StartViewHeader);
 
 export const StartView = () => {
+  const navigate = useNavigate();
   const [selectedMode, setSelectedMode] = useState<Mode | null>(null);
   const chooseMode = (mode: Mode) => setSelectedMode(mode);
+  const startGame = (mode: Mode) => {
+    const searchParams = new URLSearchParams({ mode: JSON.stringify(mode) });
+    const modeSearchParamsString = searchParams.toString();
+    navigate(`/quiz/?${modeSearchParamsString}`);
+  };
   const handleStart = () => {
     if (!selectedMode) return;
     startGame(selectedMode);

@@ -2,25 +2,59 @@ import type { QuestionAnswer, Quiz } from "@quiz/domain/quiz/types";
 import Typography from "@quiz/components/Typography";
 import { Choices } from "@quiz/components/Choices";
 import Button from "@quiz/components/Button";
-import { useInGameQuiz } from "@quiz/domain/quiz/useInGameQuiz";
+import { useInGameQuizInstance } from "@quiz/domain/quiz/useInGameQuizInstance";
 import { useState } from "react";
-import { QuizQuestionSkeleton } from "./QuizQuestionSkeloton";
-import { Transition } from "@headlessui/react";
-
-const timeRemaining = "0";
+import { QuizQuestionSkeleton } from "@quiz/components/QuizQuestionSkeleton";
+import { useTimeRemaining } from "@quiz/domain/quiz/useTimeRemaining";
+import { AppearenceTransition } from "@quiz/components/AppearenceTransition";
+import { useNavigate } from "react-router-dom";
+import { createQuizResultInstance } from "@quiz/domain/quiz/createQuizResultInstance";
 
 export const QuizView = ({ quiz }: { quiz: Quiz }) => {
+  const navigate = useNavigate();
+  const endGameAndRedirectToResults = (quizInstance: Quiz) => {
+    const quizResults = createQuizResultInstance(quizInstance);
+    const searchParams = new URLSearchParams({
+      quizResults: JSON.stringify(quizResults),
+    });
+    const quizResultsSearchParamsString = searchParams.toString();
+    navigate(`/results/?${quizResultsSearchParamsString}`);
+  };
   const {
     questionIndex,
     currentQuestion,
     loadingNextQuestion,
     actions: { onAnswer, onSkip },
-  } = useInGameQuiz(quiz, () => null);
+  } = useInGameQuizInstance(quiz, endGameAndRedirectToResults);
+
   const [selectedAnswer, setSelectedAnswer] = useState<QuestionAnswer | null>(
     null
   );
+  const handleNextQuestion = () => {
+    selectedAnswer ? onAnswer(selectedAnswer) : onSkip();
+    setSelectedAnswer(null);
+  };
+  const { timeRemaining, resetTimeRemaining } = useTimeRemaining(
+    10,
+    handleNextQuestion
+  );
+
+  const handleAnswer = () => {
+    if (!selectedAnswer) return;
+    onAnswer(selectedAnswer);
+    setSelectedAnswer(null);
+    resetTimeRemaining();
+  };
+
+  const handleSkip = () => {
+    onSkip();
+    resetTimeRemaining();
+    setSelectedAnswer(null);
+  };
+
   const headerValue = `Pytanie ${questionIndex + 1}`;
   const currentQuestionIsReady = currentQuestion && !loadingNextQuestion;
+
   return (
     <main className="flex flex-col justify-center items-center my-4 sm:h-screen">
       <header className="flex justify-between w-64">
@@ -32,17 +66,9 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
       <div className="flex flex-col gap-y-4 items-center">
         {loadingNextQuestion ? <QuizQuestionSkeleton /> : null}
         {currentQuestionIsReady ? (
-          <Transition
+          <AppearenceTransition
             as="div"
             className="flex flex-col gap-y-4 justify-center items-center"
-            appear
-            show
-            enter="transition-opacity duration-200"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
           >
             <figure>
               <img
@@ -62,20 +88,13 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
               selected={selectedAnswer}
               onChoice={setSelectedAnswer}
             />
-          </Transition>
+          </AppearenceTransition>
         ) : null}
         <div className="flex flex-col gap-x-4 gap-y-4">
-          <Button
-            disabled={!selectedAnswer}
-            onClick={() => {
-              if (!selectedAnswer) return;
-              onAnswer(selectedAnswer);
-              setSelectedAnswer(null);
-            }}
-          >
+          <Button disabled={!selectedAnswer} onClick={handleAnswer}>
             odpowiedź
           </Button>
-          <Button onClick={onSkip} variant="outlined">
+          <Button onClick={handleSkip} variant="outlined">
             pomiń
           </Button>
         </div>

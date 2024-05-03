@@ -1,7 +1,5 @@
 export type Mode = { key: string; label: string; questionCount: number };
 
-export type QuestionResult = "skipped" | "correct" | "false";
-
 export type QuestionAnswer = { key: string; label: string };
 
 type QuestionImage = {
@@ -35,3 +33,5 @@ export type QuizResults = {
   };
   route: Array<{ id: string; questionResult: QuestionResult }>;
 };
+
+export type QuestionResult = "skipped" | "correct" | "false";

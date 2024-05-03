@@ -1,30 +1,30 @@
 import Button from "@quiz/components/Button";
 import Typography from "@quiz/components/Typography";
 import type { QuizResults } from "@quiz/domain/quiz/types";
+import { useNavigate } from "react-router-dom";
 
-const quizResult = "12";
-const quizCorrectAnswers = "10";
-const quizFalseAnswers = "2";
-const quizSkippedAnswers = "0";
-const quizRoute = [
-  { id: "1", questionResult: "skipped" },
-  { id: "2", questionResult: "correct" },
-  { id: "3", questionResult: "false" },
-  { id: "4", questionResult: "correct" },
-  { id: "5", questionResult: "false" },
-  { id: "6", questionResult: "correct" },
-  { id: "7", questionResult: "false" },
-  { id: "8", questionResult: "correct" },
-] satisfies QuizResults["route"];
-
-export const ResultsView = () => {
+type ResultsViewProps = {
+  quizResults: QuizResults;
+};
+export const ResultsView = ({
+  quizResults: {
+    answerStatistic: {
+      correct: quizCorrectAnswers,
+      false: quizFalseAnswers,
+      skipped: quizSkippedAnswers,
+    },
+    route,
+  },
+}: ResultsViewProps) => {
+  const navigate = useNavigate();
+  const navigateToHome = () => navigate("/");
   return (
     <main className="flex flex-col gap-y-8">
       <header className="text-center text-4xl sm:flex gap-x-8">
         <Typography as="h1" className="font-thin">
           Twój wynik
         </Typography>
-        <Typography className="font-bold">{quizResult} pkt</Typography>
+        <Typography className="font-bold">{quizCorrectAnswers} pkt</Typography>
       </header>
       <section className="flex flex-col gap-y-4">
         <Typography as="h2" variant="secondary" className="underline text-2xl">
@@ -46,15 +46,16 @@ export const ResultsView = () => {
             </li>
           </ul>
           <div className="grid grid-cols-5 gap-2">
-            {quizRoute.map((quizAnswer) => (
+            {route.map((quizAnswer) => (
               <div
-                className={`w-[25px] h-[25px] rounded-sm shadow-sm ${quizAnswer.questionResult === "correct" ? "bg-green-500" : "bg-red-500"}`}
+                key={quizAnswer.id}
+                className={`w-[25px] h-[25px] rounded-sm shadow-sm ${quizAnswer.questionResult === "correct" ? "bg-green-500" : "bg-red-500"} ${quizAnswer.questionResult === "skipped" ? "bg-gray-500" : ""}`}
               />
             ))}
           </div>
         </div>
       </section>
-      <Button>Zagraj jeszcze raz</Button>
+      <Button onClick={navigateToHome}>Zagraj jeszcze raz</Button>
     </main>
   );
 };

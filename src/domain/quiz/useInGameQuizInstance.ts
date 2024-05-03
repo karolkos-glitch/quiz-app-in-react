@@ -1,7 +1,7 @@
 import { useState, useTransition } from "react";
 import type { QuestionAnswer, Quiz } from "./types";
 
-export const useInGameQuiz = (
+export const useInGameQuizInstance = (
   initialGameQuiz: Quiz,
   endGame: (quiz: Quiz) => void
 ) => {
