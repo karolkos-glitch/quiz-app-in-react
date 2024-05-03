@@ -20,4 +20,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const View: Story = {};
+export const View: Story = {
+  args: {
+    quizResults: {
+      answerStatistic: {
+        correct: 8,
+        false: 2,
+        skipped: 0,
+      },
+      route: [
+        { id: "1", questionResult: "false" },
+        { id: "2", questionResult: "correct" },
+        { id: "3", questionResult: "skipped" },
+      ],
+    },
+  },
+};
