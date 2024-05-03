@@ -21,7 +21,7 @@ export const Choices = <T extends { label: string; key: string }>({
       <Typography variant="secondary" className="text-xl text-center">
         {label}
       </Typography>
-      <div className="flex flex-col items-center justify-center sm:flex-row">
+      <div className="flex flex-col items-center justify-center gap-y-2 sm:flex-row">
         {choices.map((choice) => (
           <Button
             type="button"

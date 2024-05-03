@@ -25,7 +25,7 @@ export const StartView = () => {
   };
 
   return (
-    <main className="flex flex-col items-center gap-y-8 w-screen">
+    <main className="flex flex-col justify-center items-center my-4 sm:h-screen">
       <MemoizedStartViewHeader />
       <Choices
         label="Wybierz tryb gry"

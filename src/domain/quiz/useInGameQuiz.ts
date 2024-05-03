@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import type { QuestionAnswer, Quiz } from "./types";
 
 export const useInGameQuiz = (
   initialGameQuiz: Quiz,
   endGame: (quiz: Quiz) => void
 ) => {
+  const [loadingNextQuestion, startTransitionToNextQuestion] = useTransition();
   const [quiz, setQuiz] = useState(initialGameQuiz);
   const [questionIndex, setQuestionIndex] = useState(0);
   const currentQuestion = quiz.questions.at(questionIndex);
@@ -18,30 +19,35 @@ export const useInGameQuiz = (
   };
 
   const onAnswer = (answer: QuestionAnswer) => {
-    setQuiz(() => {
-      const newQuiz = { ...quiz };
-      newQuiz.questions[questionIndex].result =
-        answer.key === newQuiz.questions[questionIndex].content.correctAnswer
-          ? "correct"
-          : "false";
-
-      return newQuiz;
-    });
     nextQuestion();
+    startTransitionToNextQuestion(() => {
+      setQuiz(() => {
+        const newQuiz = { ...quiz };
+        newQuiz.questions[questionIndex].result =
+          answer.key === newQuiz.questions[questionIndex].content.correctAnswer
+            ? "correct"
+            : "false";
+
+        return newQuiz;
+      });
+    });
   };
 
   const onSkip = () => {
-    setQuiz(() => {
-      const newQuiz = { ...quiz };
-      newQuiz.questions[questionIndex].result = "skipped";
-      return newQuiz;
-    });
     nextQuestion();
+    startTransitionToNextQuestion(() => {
+      setQuiz(() => {
+        const newQuiz = { ...quiz };
+        newQuiz.questions[questionIndex].result = "skipped";
+        return newQuiz;
+      });
+    });
   };
 
   return {
     questionIndex,
     currentQuestion,
+    loadingNextQuestion,
     actions: {
       onAnswer,
       onSkip,

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { QuizView } from "@quiz/components/QuizView";
+import { QuizCreatorRenderer } from "@quiz/components/QuizCreator";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -17,7 +18,18 @@ const meta = {
 } satisfies Meta<typeof QuizView>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const View: Story = {};
+export const View = {
+  render: () => (
+    <QuizCreatorRenderer mode={initialMode}>
+      {(quizInstance) => <QuizView quiz={quizInstance} />}
+    </QuizCreatorRenderer>
+  ),
+};
+
+const initialMode = {
+  label: "10 pytań",
+  key: "10-questions",
+  questionCount: 15,
+};
