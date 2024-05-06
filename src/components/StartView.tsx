@@ -6,7 +6,7 @@ import { Mode } from "@quiz/domain/quiz/types";
 import { useNavigate } from "react-router-dom";
 
 const modeChoices = [
-  { key: "10-questions", label: "10 pytan", questionCount: 10 },
+  { key: "10-questions", label: "10 pytań", questionCount: 10 },
   { key: "30-questions", label: "15 pytań", questionCount: 15 },
   { key: "50-questions", label: "20 pytań", questionCount: 20 },
 ] satisfies Mode[];
@@ -28,7 +28,7 @@ export const StartView = () => {
   };
 
   return (
-    <main className="flex flex-col justify-center items-center my-4 sm:h-screen">
+    <main className="flex flex-col justify-center items-center my-4 gap-y-5 sm:h-screen">
       <MemoizedStartViewHeader />
       <Choices
         label="Wybierz tryb gry"
