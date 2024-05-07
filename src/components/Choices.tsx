@@ -22,7 +22,7 @@ export const Choices = <T extends { label: string; key: string }>({
       >
         {label}
       </Typography>
-      <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
+      <div className="grid justify-center gap-2 sm:grid-flow-col sm:grid-rows-2">
         {choices.map((choice) => (
           <Button
             type="button"
