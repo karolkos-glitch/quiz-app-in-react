@@ -2,7 +2,7 @@ import { Button } from "@quiz/components/Button";
 import { Typography } from "@quiz/components/Typography";
 import type { QuizResults } from "@quiz/domain/quiz/types";
 import { useNavigate } from "react-router-dom";
-import { ResultsAnswerHistory } from "./ResultsAnswersHistory";
+import { ResultsAnswersHistory } from "./ResultsAnswersHistory";
 import { ResultsStats } from "./ResultsStats";
 
 type ResultsViewProps = {
@@ -38,7 +38,7 @@ export const ResultsView = ({
             quizFalseAnswers={quizFalseAnswers}
             quizSkippedAnswers={quizSkippedAnswers}
           />
-          <ResultsAnswerHistory route={route} />
+          <ResultsAnswersHistory route={route} />
         </div>
       </section>
       <Button onClick={navigateToHome}>Zagraj jeszcze raz</Button>
