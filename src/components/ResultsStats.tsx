@@ -14,7 +14,7 @@ export const ResultsStats = ({
   return (
     <ul>
       <li className="flex justify-between gap-x-2 text-xl">
-        <Typography className="text-green-500">Poprawne</Typography>
+        <Typography variant="green">Poprawne</Typography>
         <Typography variant="secondary">{quizCorrectAnswers}</Typography>
       </li>
       <li className="flex justify-between gap-x-2 text-xl">

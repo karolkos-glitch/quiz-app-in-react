@@ -16,7 +16,10 @@ export const Choices = <T extends { label: string; key: string }>({
 }: ChoicesProps<T>) => {
   return (
     <div className="flex flex-col w-[75%] gap-y-4">
-      <Typography variant="secondary" className="text-xl text-center">
+      <Typography
+        variant="secondary"
+        className="text-3xl text-center font-light"
+      >
         {label}
       </Typography>
       <div className="flex flex-col items-center justify-center gap-2 sm:flex-row">
@@ -37,7 +40,7 @@ export const Choices = <T extends { label: string; key: string }>({
 
 const getButtonVariant = <T extends { key: string }>(
   selectedMode: T | null,
-  modeFromChoices: T,
+  modeFromChoices: T
 ): ButtonProps["variant"] => {
   if (!selectedMode) return "questionable";
   return selectedMode.key === modeFromChoices.key ? "solid" : "questionable";

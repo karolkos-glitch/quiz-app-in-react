@@ -8,7 +8,7 @@ export const StartViewHeader = () => {
           Quiz o:
         </Typography>
         <figure>
-          <img src="/the-office-logo.png" alt="Logo the office" width={200} />
+          <img src="/the-office-logo.jpeg" alt="Logo the office" width={200} />
         </figure>
       </header>
       <header className="px-4 hidden sm:flex flex-col">
@@ -16,11 +16,11 @@ export const StartViewHeader = () => {
           Quiz
         </Typography>
         <div className="flex items-center gap-x-4">
-          <Typography variant="secondary" className="text-4xl">
+          <Typography variant="secondary" className="text-4xl font-light">
             Jak dobrze znasz serial
           </Typography>
           <figure>
-            <img src="/the-office-logo.png" alt="Logo the office" width={400} />
+            <img src="/the-office-logo.jpeg" alt="Logo the office" width={400} />
           </figure>
         </div>
       </header>

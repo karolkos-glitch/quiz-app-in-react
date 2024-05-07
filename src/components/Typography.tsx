@@ -1,7 +1,7 @@
 type TypographyProps = React.HTMLAttributes<HTMLSpanElement> & {
   as?: React.ElementType;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "white";
+  variant?: "primary" | "secondary" | "white" | "green";
   debug?: boolean;
 };
 
@@ -13,7 +13,7 @@ export const Typography = ({
   ...htmlAttributes
 }: TypographyProps) => {
   const Element = as;
-  const classNameValue = `${getClassNameValuesBySpecificVariant(variant)} ${htmlAttributes.className} ${debug ? "border-2 border-red-900" : ""}`;
+  const classNameValue = `${htmlAttributes.className} ${getClassNameValuesBySpecificVariant(variant)}  ${debug ? "border-2 border-red-900" : ""} `;
   return (
     <Element {...htmlAttributes} className={classNameValue}>
       {children}
@@ -22,7 +22,7 @@ export const Typography = ({
 };
 
 const getClassNameValuesBySpecificVariant = (
-  variant: TypographyProps["variant"],
+  variant: TypographyProps["variant"]
 ) => {
   switch (variant) {
     case "white":
@@ -31,5 +31,7 @@ const getClassNameValuesBySpecificVariant = (
       return "text-typo-300";
     case "primary":
       return "text-primary-300";
+    case "green":
+      return "text-green-500";
   }
 };

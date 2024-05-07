@@ -23,7 +23,7 @@ export const ResultsView = ({
   return (
     <main className="flex flex-col justify-center items-center mx-2 gap-y-8 sm:h-screen">
       <header className="text-center text-4xl sm:flex gap-x-8">
-        <Typography as="h1" className="font-thin">
+        <Typography as="h1" className="font-light">
           Twój wynik
         </Typography>
         <Typography className="font-bold">{quizCorrectAnswers} pkt</Typography>
