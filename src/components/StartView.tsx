@@ -37,7 +37,11 @@ export const StartView = () => {
         onChoice={chooseMode}
       />
       <div className="w-[75%] flex flex-col justify-center items-center">
-        <Button type="button" disabled={!selectedMode} onClick={handleStart}>
+        <Button
+          type="button"
+          variant={selectedMode ? "solid" : "questionable"}
+          onClick={handleStart}
+        >
           Start
         </Button>
       </div>

@@ -21,7 +21,7 @@ export const ResultsView = ({
   const navigate = useNavigate();
   const navigateToHome = () => navigate("/");
   return (
-    <main className="flex flex-col gap-y-8">
+    <main className="flex flex-col justify-center items-center mx-2 gap-y-8 sm:h-screen">
       <header className="text-center text-4xl sm:flex gap-x-8">
         <Typography as="h1" className="font-thin">
           Twój wynik

@@ -4,6 +4,10 @@ import { ResultsAnswersHistory } from "@quiz/components/ResultsAnswersHistory";
 const meta = {
   title: "Components/ResultsAnswersHistory",
   component: ResultsAnswersHistory,
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
 } satisfies Meta<typeof ResultsAnswersHistory>;
 
 export default meta;

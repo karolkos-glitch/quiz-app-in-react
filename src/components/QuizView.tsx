@@ -28,7 +28,7 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
   } = useInGameQuizInstance(quiz, endGameAndRedirectToResults);
 
   const [selectedAnswer, setSelectedAnswer] = useState<QuestionAnswer | null>(
-    null,
+    null
   );
   const handleNextQuestion = () => {
     selectedAnswer ? onAnswer(selectedAnswer) : onSkip();
@@ -36,7 +36,7 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
   };
   const { timeRemaining, resetTimeRemaining } = useTimeRemaining(
     10,
-    handleNextQuestion,
+    handleNextQuestion
   );
 
   const handleAnswer = () => {
@@ -91,7 +91,10 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
           </AppearenceTransition>
         ) : null}
         <div className="flex flex-col gap-x-4 gap-y-4">
-          <Button disabled={!selectedAnswer} onClick={handleAnswer}>
+          <Button
+            onClick={handleAnswer}
+            variant={selectedAnswer ? "solid" : "questionable"}
+          >
             odpowiedź
           </Button>
           <Button onClick={handleSkip} variant="outlined">

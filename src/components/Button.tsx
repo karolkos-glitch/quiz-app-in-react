@@ -8,15 +8,12 @@ export const Button = ({
   variant = "solid",
   ...htmlButtonProps
 }: ButtonProps) => {
-  const classNameValue = getClassNameValuesBySpecificVariant(
-    variant,
-    htmlButtonProps.disabled
-  );
+  const classNameValue = getClassNameValuesBySpecificVariant(variant);
 
   return (
     <button
       {...htmlButtonProps}
-      className={`border-2 rounded-md px-4 py-2 transition :disabled:bg-slate-800 :disabled-text-white ${classNameValue}`}
+      className={`border-2 rounded-md px-4 w-64 py-2 transition :disabled:bg-slate-800 :disabled-text-white ${classNameValue}`}
     >
       {children}
     </button>
@@ -24,10 +21,8 @@ export const Button = ({
 };
 
 const getClassNameValuesBySpecificVariant = (
-  variant: ButtonProps["variant"],
-  disabled = false
+  variant: ButtonProps["variant"]
 ) => {
-  if (disabled) return "bg-slate-400 text-white";
   switch (variant) {
     case "solid":
       return "bg-primary-500 text-white hover:bg-primary-600";
@@ -38,6 +33,4 @@ const getClassNameValuesBySpecificVariant = (
   }
 };
 
-<Button variant="questionable">
-  Button
-</Button>
+<Button variant="questionable">Button</Button>;
