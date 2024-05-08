@@ -6,14 +6,23 @@ type ChoicesProps<T> = {
   label: string;
   selected?: T | null;
   onChoice?: (choice: T) => void;
+  variant?: "inline" | "grid";
 };
 
 export const Choices = <T extends { label: string; key: string }>({
   onChoice = () => null,
   choices,
   selected = null,
+  variant = "inline",
   label,
 }: ChoicesProps<T>) => {
+  const choicesWrapperClassValueMap: Record<
+    NonNullable<ChoicesProps<T>["variant"]>,
+    string
+  > = {
+    inline: "flex flex-col justify-center gap-2 sm:flex-row",
+    grid: "grid justify-center gap-2 sm:grid-flow-col sm:grid-rows-2",
+  };
   return (
     <div className="flex flex-col w-[75%] gap-y-4">
       <Typography
@@ -22,7 +31,7 @@ export const Choices = <T extends { label: string; key: string }>({
       >
         {label}
       </Typography>
-      <div className="grid justify-center gap-2 sm:grid-flow-col sm:grid-rows-2">
+      <div className={choicesWrapperClassValueMap[variant]}>
         {choices.map((choice) => (
           <Button
             type="button"

@@ -6,9 +6,9 @@ import { useInGameQuizInstance } from "@quiz/domain/quiz/useInGameQuizInstance";
 import { useState } from "react";
 import { QuizQuestionSkeleton } from "@quiz/components/QuizQuestionSkeleton";
 import { useTimeRemaining } from "@quiz/domain/quiz/useTimeRemaining";
-import { AppearenceTransition } from "@quiz/components/AppearenceTransition";
 import { useNavigate } from "react-router-dom";
 import { createQuizResultInstance } from "@quiz/domain/quiz/createQuizResultInstance";
+import { QuizQuestionViewWrapper } from "@quiz/components/QuizQuestionViewWrapper";
 
 export const QuizView = ({ quiz }: { quiz: Quiz }) => {
   const navigate = useNavigate();
@@ -66,29 +66,15 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
       <div className="flex flex-col gap-y-4 items-center">
         {loadingNextQuestion ? <QuizQuestionSkeleton /> : null}
         {currentQuestionIsReady ? (
-          <AppearenceTransition
-            as="div"
-            className="flex flex-col gap-y-4 justify-center items-center"
-          >
-            <figure>
-              <img
-                className="object-contain"
-                src={
-                  currentQuestion.content.image?.src ??
-                  "https://picsum.photos/300/200"
-                }
-                alt={currentQuestion.content.image?.alt ?? "Lorem ipsum"}
-                width={currentQuestion.content.image?.width ?? "300"}
-                height={currentQuestion.content.image?.heigth ?? "200"}
-              />
-            </figure>
+          <QuizQuestionViewWrapper question={currentQuestion.content}>
             <Choices
               label={currentQuestion.content.question}
               choices={currentQuestion.content.answers}
               selected={selectedAnswer}
               onChoice={setSelectedAnswer}
+              variant="grid"
             />
-          </AppearenceTransition>
+          </QuizQuestionViewWrapper>
         ) : null}
         <div className="flex flex-col gap-x-4 gap-y-4">
           <Button

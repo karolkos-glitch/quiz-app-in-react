@@ -36,7 +36,7 @@ export const StartView = () => {
         selected={selectedMode}
         onChoice={chooseMode}
       />
-      <div className="w-[75%] flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         <Button
           type="button"
           variant={selectedMode ? "solid" : "questionable"}

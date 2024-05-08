@@ -95,3 +95,67 @@ export const ALotOfOptions: Story = {
     ],
   },
 };
+
+export const GridVariant: Story = {
+  args: {
+    variant: "grid",
+    choices: [
+      {
+        key: "10-questions",
+        label: "Option 1",
+      },
+      {
+        key: "30-questions",
+        label: "Option 2",
+      },
+      {
+        key: "50-questions",
+        label: "Option 3",
+      },
+    ],
+  },
+};
+
+export const GridVariantALotOfOptions: Story = {
+  args: {
+    variant: "grid",
+    choices: [
+      {
+        label: "Option 1",
+        key: "10-questions",
+      },
+      {
+        label: "Option 2",
+        key: "30-questions",
+      },
+      {
+        label: "Option 3",
+        key: "50-questions",
+      },
+      {
+        label: "Option 4",
+        key: "70-questions",
+      },
+      {
+        label: "Option 5",
+        key: "80-questions",
+      },
+      {
+        label: "Option 6",
+        key: "90-questions",
+      },
+      {
+        label: "Option 7",
+        key: "100-questions",
+      },
+      {
+        label: "Option 8",
+        key: "120-questions",
+      },
+      {
+        label: "Option 9",
+        key: "150-questions",
+      },
+    ],
+  },
+};

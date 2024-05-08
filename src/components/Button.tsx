@@ -6,16 +6,14 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button = ({
   children = null,
   variant = "solid",
+  disabled = false,
   ...htmlButtonProps
 }: ButtonProps) => {
-  const classNameValue = getClassNameValuesBySpecificVariant(
-    variant,
-    htmlButtonProps.disabled
-  );
+  const classNameValue = getClassNameValuesBySpecificVariant(variant, disabled);
 
   return (
     <button
-      disabled={htmlButtonProps.disabled}
+      disabled={disabled}
       {...htmlButtonProps}
       className={`border-2 rounded-md px-4 w-64 py-2 transition font-light ${classNameValue}`}
     >
@@ -26,11 +24,10 @@ export const Button = ({
 
 const getClassNameValuesBySpecificVariant = (
   variant: ButtonProps["variant"],
-  disabled = false
+  disabled: boolean
 ) => {
-  if (disabled) {
-    return "bg-slate-400 text-white";
-  }
+  if (disabled) return 
+
   switch (variant) {
     case "solid":
       return "bg-primary-500 text-white hover:bg-primary-600";
@@ -40,5 +37,3 @@ const getClassNameValuesBySpecificVariant = (
       return "bg-white border-primary-500 text-primary-500 hover:bg-primary-100";
   }
 };
-
-//
