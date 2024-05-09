@@ -20,8 +20,8 @@ export const Choices = <T extends { label: string; key: string }>({
     NonNullable<ChoicesProps<T>["variant"]>,
     string
   > = {
-    inline: "flex flex-col justify-center gap-2 sm:flex-row",
-    grid: "grid justify-center gap-2 sm:grid-flow-col sm:grid-rows-2",
+    inline: "flex flex-col items-center justify-center gap-2 sm:flex-row",
+    grid: "grid justify-center items-center gap-2 sm:grid-flow-col sm:grid-rows-2",
   };
   return (
     <div className="flex flex-col w-[75%] gap-y-4">
