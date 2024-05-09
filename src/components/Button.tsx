@@ -3,19 +3,19 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "solid" | "questionable" | "outlined";
 };
 
+// styles from designer: "bg-gray-300 text-gray-500 cursor-not-allowed";
+
 export const Button = ({
   children = null,
   variant = "solid",
-  disabled = false,
   ...htmlButtonProps
 }: ButtonProps) => {
-  const classNameValue = getClassNameValuesBySpecificVariant(variant, disabled);
+  const classNameValue = getClassNameValuesBySpecificVariant(variant);
 
   return (
     <button
-      disabled={disabled}
       {...htmlButtonProps}
-      className={`border-2 rounded-md px-4 w-64 py-2 transition font-light ${classNameValue}`}
+      className={`border-2 text-2xl rounded-md px-4 w-64 py-2 transition font-light ${classNameValue}`}
     >
       {children}
     </button>
@@ -23,11 +23,8 @@ export const Button = ({
 };
 
 const getClassNameValuesBySpecificVariant = (
-  variant: ButtonProps["variant"],
-  disabled: boolean
+  variant: ButtonProps["variant"]
 ) => {
-  if (disabled) return 
-
   switch (variant) {
     case "solid":
       return "bg-primary-500 text-white hover:bg-primary-600";

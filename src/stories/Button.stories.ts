@@ -35,10 +35,3 @@ export const Outlined: Story = {
     children: "Button",
   },
 };
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    children: "Dezaktywowany przycisk",
-  },
-};

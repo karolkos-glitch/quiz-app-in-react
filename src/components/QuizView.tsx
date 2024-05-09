@@ -79,7 +79,6 @@ export const QuizView = ({ quiz }: { quiz: Quiz }) => {
         <div className="flex flex-col gap-x-4 gap-y-4">
           <Button
             onClick={handleAnswer}
-            disabled={!selectedAnswer}
             variant={selectedAnswer ? "solid" : "questionable"}
           >
             odpowiedź
